@@ -101,6 +101,21 @@
 
 
                 <li>
+                    <a href="javascript: void(0);"><i class="fa-solid fa-calendar-days"></i>
+                        <span> Manage Expense
+                        </span> <span class="menu-arrow"></span>
+                    </a>
+                    <ul class="nav-second-level" aria-expanded="false">
+
+                        <li><a href="{{ route('expense') }}">Expense</a></li>
+                        <li><a href="">Monthly Expense</a></li>
+                        <li><a href="">Yearly Expense</a></li>
+
+                    </ul>
+                </li>
+
+
+                <li>
                     <a href="javascript:void(0);"><i class="fi-marquee-plus"></i><span
                             class="badge badge-success pull-right">Hot</span> <span> POS </span></a>
                     <ul class="nav-second-level" aria-expanded="false">

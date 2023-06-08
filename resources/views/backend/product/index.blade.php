@@ -33,7 +33,6 @@
                                 <tr>
                                     <th>SL</th>
                                     <th>Product Name</th>
-
                                     <th>Category</th>
                                     <th>Product Image</th>
                                     <th>Action</th>
