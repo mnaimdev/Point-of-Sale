@@ -32,7 +32,7 @@ require __DIR__ . '/auth.php';
 
 
 // User
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/logout', [UserController::class, 'admin_logout'])->name('admin.logout');
     Route::get('/admin/logout/page', [UserController::class, 'admin_logout_page']);
     Route::get('/admin/profile', [UserController::class, 'admin_profile'])->name('admin.profile');
@@ -51,6 +51,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/employee/update', [EmployeeController::class, 'update'])->name('employee.update');
     Route::get('/employee/delete/{id}', [EmployeeController::class, 'destroy'])->name('employee.delete');
 });
+
 
 
 // Customer
@@ -145,5 +146,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/product/delete/{id}', 'destroy')->name('product.delete');
 
         Route::get('/product/barcode/{id}', 'code')->name('product.barcode');
+
+        Route::get('/product/import', 'import')->name('product.import');
+        Route::post('/product/import/store', 'import_store')->name('import.store');
+
+        Route::get('/product/export', 'export')->name('product.export');
     });
 });

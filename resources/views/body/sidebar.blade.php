@@ -94,6 +94,7 @@
                     <ul class="nav-second-level" aria-expanded="false">
 
                         <li><a href="{{ route('product') }}">Product</a></li>
+                        <li><a href="{{ route('product.import') }}">Import Product</a></li>
 
                     </ul>
                 </li>

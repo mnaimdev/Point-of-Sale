@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Exports\ProductExport;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Supplier;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
+use Illuminate\Support\Carbon;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class ProductController extends Controller
 {
@@ -195,5 +198,22 @@ class ProductController extends Controller
         return view('backend.product.barcode', [
             'product'       => $product,
         ]);
+    }
+
+
+    public function import()
+    {
+        return view('backend.product.import');
+    }
+
+    public function import_store(Request $request)
+    {
+        echo 'hello';
+    }
+
+    public function export()
+    {
+        // return Excel::download(new ProductExport, 'product.csv');
+        return Excel::download(new ProductExport, 'product.xlsx');
     }
 }
