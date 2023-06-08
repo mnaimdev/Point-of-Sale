@@ -108,8 +108,8 @@
                     <ul class="nav-second-level" aria-expanded="false">
 
                         <li><a href="{{ route('expense') }}">Expense</a></li>
-                        <li><a href="">Monthly Expense</a></li>
-                        <li><a href="">Yearly Expense</a></li>
+                        <li><a href="{{ route('expense.month') }}">Monthly Expense</a></li>
+                        <li><a href="{{ route('expense.year') }}">Yearly Expense</a></li>
 
                     </ul>
                 </li>

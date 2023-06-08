@@ -164,5 +164,8 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/expense/store', 'store')->name('expense.store');
         Route::get('/expense/edit/{id}', 'edit')->name('expense.edit');
         Route::post('/expense/update', 'update')->name('expense.update');
+
+        Route::get('/expense/month', 'month')->name('expense.month');
+        Route::get('/expense/year', 'year')->name('expense.year');
     });
 });
