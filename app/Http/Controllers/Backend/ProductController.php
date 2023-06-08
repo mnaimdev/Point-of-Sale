@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Exports\ProductExport;
 use App\Http\Controllers\Controller;
+use App\Imports\ProductImport;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Supplier;
@@ -208,7 +209,15 @@ class ProductController extends Controller
 
     public function import_store(Request $request)
     {
-        echo 'hello';
+
+        Excel::import(new ProductImport, $request->file('import_file'));
+
+        $notification = array(
+            'message'       => 'Product Imported Successfully!',
+            'alert-type'    => 'success',
+        );
+
+        return back()->with($notification);
     }
 
     public function export()

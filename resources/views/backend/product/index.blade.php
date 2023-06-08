@@ -4,7 +4,13 @@
     <div class="container">
         <nav aria-label="breadcrumb"
             style="margin-top: 30px; display: flex; justify-content: space-between; align-items: center;">
-            <a href="{{ route('product.create') }}" class="btn btn-primary">Add New</a>
+            <div>
+                <a href="{{ route('product.create') }}" class="btn btn-primary">Add New</a>
+                &nbsp;&nbsp;
+                <a href="{{ route('product.import') }}" class="btn btn-info">Import</a>
+                &nbsp;&nbsp;
+                <a href="{{ route('product.export') }}" class="btn btn-danger">Export</a>
+            </div>
 
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
@@ -27,8 +33,7 @@
                                 <tr>
                                     <th>SL</th>
                                     <th>Product Name</th>
-                                    <th>Product Code</th>
-                                    <th>Supplier</th>
+
                                     <th>Category</th>
                                     <th>Product Image</th>
                                     <th>Action</th>
@@ -39,8 +44,7 @@
                                     <tr>
                                         <td>{{ $sl + 1 }}</td>
                                         <td>{{ $product->product_name }}</td>
-                                        <td>{{ $product->product_code }}</td>
-                                        <td>{{ $product->rel_to_supplier->name }}</td>
+
                                         <td>{{ $product->rel_to_category->category_name }}</td>
                                         <td>
                                             <img width="50" height="50"
