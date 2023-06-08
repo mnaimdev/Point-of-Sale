@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\EmployeeSalaryController;
+use App\Http\Controllers\Backend\ExpenseController;
 use App\Http\Controllers\Backend\PaySalaryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SupplierController;
@@ -151,5 +152,17 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/product/import/store', 'import_store')->name('import.store');
 
         Route::get('/product/export', 'export')->name('product.export');
+    });
+});
+
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::controller(ExpenseController::class)->group(function () {
+        Route::get('/expense', 'index')->name('expense');
+        Route::get('/expense/create', 'create')->name('expense.create');
+        Route::post('/expense/store', 'store')->name('expense.store');
+        Route::get('/expense/edit/{id}', 'edit')->name('expense.edit');
+        Route::post('/expense/update', 'update')->name('expense.update');
     });
 });
