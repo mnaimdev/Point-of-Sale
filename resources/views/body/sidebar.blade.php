@@ -117,11 +117,9 @@
 
                 <li>
                     <a href="javascript:void(0);"><i class="fi-marquee-plus"></i><span
-                            class="badge badge-success pull-right">Hot</span> <span> POS </span></a>
+                            class="badge badge-success pull-right">Hot</span> <span> POS Manage </span></a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="extras-timeline.html">Timeline</a></li>
-                        <li><a href="extras-profile.html">Profile</a></li>
-
+                        <li><a href="{{ route('pos') }}">POS</a></li>
                     </ul>
                 </li>
 

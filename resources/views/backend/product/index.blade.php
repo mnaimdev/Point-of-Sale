@@ -70,31 +70,3 @@
         </div>
     </div>
 @endsection
-
-
-@section('footer_scripts')
-    <script>
-        $('.delete').click(function() {
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "Delete this record?",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    var link = $(this).attr('data-delete');
-                    location.href = link;
-                }
-            })
-        });
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            $('#table_id').DataTable();
-        });
-    </script>
-@endsection

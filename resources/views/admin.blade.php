@@ -85,21 +85,6 @@
     <script src="{{ asset('/dashboard_assets/js/modernizr.min.js') }}"></script>
 
 
-    {{-- <!-- Flot chart -->
-    <script src="../plugins/flot-chart/jquery.flot.min.js"></script>
-    <script src="../plugins/flot-chart/jquery.flot.time.js"></script>
-    <script src="../plugins/flot-chart/jquery.flot.tooltip.min.js"></script>
-    <script src="../plugins/flot-chart/jquery.flot.resize.js"></script>
-    <script src="../plugins/flot-chart/jquery.flot.pie.js"></script>
-    <script src="../plugins/flot-chart/jquery.flot.crosshair.js"></script>
-    <script src="../plugins/flot-chart/curvedLines.js"></script>
-    <script src="../plugins/flot-chart/jquery.flot.axislabels.js"></script>
-
-    <!-- KNOB JS -->
-    <!--[if IE]>
-        <script type="text/javascript" src="../plugins/jquery-knob/excanvas.js"></script>
-        <![endif]-->
-    <script src="../plugins/jquery-knob/jquery.knob.js"></script> --}}
 
     <!-- Dashboard Init -->
     <script src="{{ asset('/dashboard_assets/pages/jquery.dashboard.init.js') }}"></script>
@@ -141,6 +126,32 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+
+    <script>
+        $('.delete').click(function() {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "Delete this record?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    var link = $(this).attr('data-delete');
+                    location.href = link;
+                }
+            })
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#table_id').DataTable();
+        });
+    </script>
 
 
 
