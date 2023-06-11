@@ -125,6 +125,21 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="javascript: void(0);"><i class="fa-solid fa-calendar-days"></i>
+                        <span> Roles & Permissions
+                        </span> <span class="menu-arrow"></span>
+                    </a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li><a href="{{ route('permission') }}">Permissions</a></li>
+                        <li><a href="{{ route('role') }}">Roles</a></li>
+                        <li><a href="{{ route('add.role.permission') }}">Add Role in Permission</a></li>
+                        <li><a href="{{ route('role.permission') }}">Permission Under Role</a></li>
+                    </ul>
+                </li>
+
+
+
             </ul>
 
         </div>
