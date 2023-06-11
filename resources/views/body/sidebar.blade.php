@@ -120,6 +120,8 @@
                             class="badge badge-success pull-right">Hot</span> <span> POS Manage </span></a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li><a href="{{ route('pos') }}">POS</a></li>
+                        <li><a href="{{ route('pending.order') }}">Pending Orders</a></li>
+                        <li><a href="{{ route('complete.order') }}">Complete Orders</a></li>
                     </ul>
                 </li>
 

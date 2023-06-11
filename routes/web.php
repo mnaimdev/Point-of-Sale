@@ -175,5 +175,16 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::controller(POSController::class)->group(function () {
         Route::get('/pos', 'index')->name('pos');
+        Route::post('/cart/store', 'store')->name('cart.store');
+        Route::post('/create/invoice', 'invoice')->name('create.invoice');
+        Route::post('/order', 'order')->name('order');
+
+        Route::get('/pending/order', 'pending')->name('pending.order');
+        Route::get('/complete/order', 'complete')->name('complete.order');
+
+        Route::get('/order/details/{id}', 'details')->name('order.details');
+        Route::post('/order/status/update', 'status_update')->name('order.status.update');
+
+        Route::get('/invoice/download/{order_id}', 'download')->name('invoice.download');
     });
 });
